@@ -6,9 +6,19 @@ pipeline {
     }
     stages {
 
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                nodejs('foonode') {
+                    sh 'npm install'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                nodejs('foonode') {
+                    sh 'npm test'
+                }
             }
         }
     }
