@@ -8,7 +8,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                nodejs('foonode') {
+                nodejs('nodejs') {
                     sh 'npm install'
                 }
             }
@@ -16,7 +16,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                nodejs('foonode') {
+                nodejs('nodejs') {
                     sh 'npm test'
                 }
             }
